@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sunbutton</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #216;
+        }
+        a {
+            text-decoration: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 20px;
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background: linear-gradient(90deg, #09f,#c09,#cf0,#09f);
+            background-size: 400%;
+            color: #fff;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+        a::before {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            filter: blur(10px);
+            background: linear-gradient(90deg, #09f,#c09,#cf0,#09f);
+            background-size: 400%;
+            border-radius: 50px;
+            z-index: -1;
+        }
+        a:hover a,a:hover::before{
+            animation: changeColor 7s infinite linear;
+        }
+
+        @keyframes changeColor {
+            100%{background-position: -400% 0;}
+        }
+    </style>
+</head>
+<body>
+    <a href="#">sunbutton</a>
+</body>
+</html>

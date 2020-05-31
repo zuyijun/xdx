@@ -1,0 +1,333 @@
+@charset "UTF-8";
+.lheader .w{
+    width: 992px;
+    height: 70px;
+}
+.lheader{
+    padding-top: 10px;
+    line-height: 80px;
+    background-color: #fff;
+}
+.lheader .fl{
+    height: 70px;
+}
+.lheader .logo a{
+    display: inline-block;
+    background: url("../images/logo-login.png") no-repeat;
+    width: 170px;
+    height: 70px;
+    line-height: 70px;
+    margin-right: 20px;
+}
+.welcome{
+    height: 20px;
+    line-height: 70px;
+    font-size: 22px;
+}
+.lheader .fr i{
+    display: inline-block;
+    background: url("../images/q-icon.png") no-repeat;
+    width: 18px;
+    height: 14px;
+    vertical-align: middle;
+}
+.lcontainer .lts{
+    height: 40px;
+    line-height: 40px;
+    background: #FFF8F0;
+    text-align: center;
+    font-size: 12px;
+}
+.lts i{
+    display: inline-block;
+    background: url("../images/gt.png") no-repeat;
+    width: 19px;
+    height: 19px;
+    vertical-align: middle;
+    margin: 0 5px 0 280px;
+}
+
+
+/*登录*/
+.lcontainer .bg{
+    height: 474px;
+    background: #e93854;
+}
+.loginw{
+    background: url("../images/login_bg.jpg") no-repeat top center;
+    height: 474px;
+    width: 994px;
+    margin: 0 auto;
+    position: relative;
+}
+.login{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 350px;
+    background: #fff;
+    margin-left: -175px;
+    margin-top: -215px;
+}
+.login .warn{
+    height: 39px;
+    line-height: 39px;
+    background: #FFF8F0;
+    text-align: center;
+    color: #999;
+    position: relative;
+}
+.warn .icon_tips{
+    display: inline-block;
+    background: url("../images/icon-tips.png");
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.warn i.login_close{
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    background: rgba(0,0,0,.2);
+    line-height: 16px;
+    cursor: pointer;
+}
+#login_close a{
+    display: block;
+    width: 16px;
+    height: 16px;
+    color: white;
+}
+.login .login_method{
+    height: 54px;
+    border-bottom: 1px solid #F4F4F4;
+    text-align: center;
+    font-size: 18px;
+    line-height: 54px;
+}
+.login_method .login_l,.login_method .login_r{
+    height: 54px;
+    width: 173px;
+}
+.login_l a,.login_r a{
+    display: block;
+    height: 54px;
+}
+.login_method div.spacer{
+    float: left;
+    width: 1px;
+    height: 10px;
+    color: #F4F4F4;
+    background: none;
+    margin: 0;
+}
+.login .sm_login_box{
+    height: 264px;
+    padding-top: 20px;
+    position: relative;
+}
+/*二维码图片*/
+#sm_box .ewm{
+    height: 165px;
+    position: relative;
+}
+.ewmbox{
+    border: 1px solid #F4F4F4;
+    padding: 10px;
+    position: absolute;
+    left: 90px;
+    cursor: pointer;
+}
+.ewm:hover .ewmbox{
+    left: 15px;
+}
+.ewm:hover #phone_orange{
+    display: block;
+}
+#phone_orange{
+    display: none;
+    position: absolute;
+    left: 180px;
+    top: 0;
+}
+
+
+
+.sm_login_box .pane{
+    padding-top: 25px;
+    text-align: center;
+    margin-left: 100px;
+    padding-bottom: 16px;
+}
+.pane li{
+    float: left;
+    width: 78px;
+}
+.pane li a{
+    color: #E4393C;
+}
+.login .zh_login_box{
+    display: none;
+    height: 234px;
+    padding: 33px 20px 0 20px;
+    position: relative;
+}
+.zh_login_box .zh_box{
+    padding-bottom: 20px;
+    position: relative;
+}
+.zh_box .name_icon{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 38px;
+    height: 38px;
+    background: url("../images/pwd-icons-new.png") no-repeat;
+    border-right: 1px solid #BDBDBD;
+}
+.zh_login_box input{
+    width: 254px;
+    height: 38px;
+    border: 1px solid #BDBDBD;
+    padding-left: 50px;
+    overflow: hidden;
+    font-size: 14px;
+    font-family: '\5b8b\4f53';
+}
+.pw_box{
+    position: relative;
+}
+.pw_box .pw_icon{
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 38px;
+    height: 38px;
+    background: url("../images/pwd-icons-new.png") no-repeat -48px 0;
+    border-right: 1px solid #BDBDBD;
+}
+.zh_login_box p{
+    padding: 22px 0;
+    height: 12px;
+    width: 100%;
+}
+.zh_login_box button{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    background: #E4393C;
+    color: white;
+    font-size: 18px;
+}
+.qr{
+    padding-left: 60px;
+}
+.qr1{
+    display: inline-block;
+    background: url("../images/qr-coagent.png") no-repeat;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+.qr2{
+    display: inline-block;
+    background: url("../images/qr-coagent.png") no-repeat -25px 0;
+    width: 27px;
+    height: 25px;
+    vertical-align: middle;
+}
+.qr3{
+    display: inline-block;
+    background: url("../images/qr-coagent.png") no-repeat -52px 0;
+    width: 27px;
+    height: 25px;
+    vertical-align: middle;
+}
+.qr li{
+    float: left;
+    margin-right: 18px;
+    height: 25px;
+    line-height: 25px;
+}
+.qr i{
+    margin-right: 5px;
+}
+.qr li span{
+    color: #999;
+}
+
+.login .dsf{
+    height: 52px;
+    background: #FCFCFC;
+    border-top: 1px solid #F4F4F4;
+    padding: 0 20px;
+}
+
+.dsf li{
+    float: left;
+    height: 52px;
+    line-height: 52px;
+}
+.dsf li i{
+    margin-right: 5px;
+}
+.dsf li .spacer{
+    margin: auto 10px;
+    color: #CCCCD5;
+    font-size: 8px;
+    line-height: 52px;
+}
+.qq{
+    display: inline-block;
+    background: url("../images/QQ-weixin.png") no-repeat;
+    width: 19px;
+    height: 18px;
+    vertical-align: middle;
+}
+.weixin{
+    display: inline-block;
+    background: url("../images/QQ-weixin.png") no-repeat -19px 0;
+    width: 19px;
+    height: 18px;
+    vertical-align: middle;
+}
+.dsf .fr{
+    width: 77px;
+    height: 52px;
+    line-height: 52px;
+}
+.fr i.ljzc{
+    display: inline-block;
+    background: url("../images/pwd-icons-new.png") no-repeat -104px -75px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+.dsf a:hover{
+    text-decoration: underline;
+}
+.footer .w{
+    border-top: 1px solid #DDD;
+    text-align: center;
+    color: #999;
+    padding-top: 10px;
+}
+.active{
+    font-weight: bold;
+    color: #E4393C;
+}
+
+.footer p{
+    line-height: 40px;
+}
+.footer span{
+    margin: auto 10px;
+}
+.footer a:hover{
+    text-decoration: underline;
+    color: #f00;
+}

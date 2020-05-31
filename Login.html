@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 100vh;
+            background: linear-gradient(#216,rgb(5, 1, 56));
+            color: #39f;
+        }
+        input,button {
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+        .loginbox {
+            width: 400px;
+            height: 300px;
+            background: rgba(0, 0, 0, .5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            height: 80px;
+            line-height: 80px;
+            color: #fff;
+        }
+        .inp {
+            height: 45px;
+            border-bottom: 1px solid #fff;
+            position: relative;
+            margin: 5px auto;
+        }
+        .inp input {
+            width: 100%;
+            height: 100%;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+        .inp input:focus+label,.inp input:valid+label {
+            top: 0;
+            font-size: 12px;
+        }
+        .inp label {
+            position: absolute;
+            left: 0;
+            top: 12px;
+            transition:all 0.5s linear;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-top: 30px;
+            color: #39f;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 2px;
+            transition: all .5s linear;
+        }
+        .btn:hover {
+            background: #39f;
+            border-radius: 5px;
+            color: #fff;
+            box-shadow: 0 0 5px 0 #39f,
+                        0 0 25px 0 #39f,
+                        0 0 50px 0 #39f,
+                        0 0 100px 0 #39f;
+        }
+        .btn>span {
+            position: absolute;
+            display: block;
+        }
+        .btn>span:nth-child(1) {
+            width: 100%;
+            height: 2px;
+            background: -webkit-linear-gradient(left,transparent,#39f);
+            left: -100%;
+            top: 0;
+            animation: line1 1s linear infinite;
+        }
+        @keyframes line1 {
+            50%,100% {
+                left: 100%;
+            }
+        }
+        .btn>span:nth-child(2) {
+            width: 2px;
+            height: 100%;
+            background: -webkit-linear-gradient(top,transparent,#39f);
+            right: 0%;
+            top: -100%;
+            animation: line2 1s 0.25s linear infinite;
+        }
+        @keyframes line2 {
+            50%,100% {
+                top: 100%;
+            }
+        }
+        .btn>span:nth-child(3) {
+            width: 100%;
+            height: 2px;
+            background: -webkit-linear-gradient(left,#39f,transparent);
+            left: 100%;
+            bottom: 0;
+            animation: line3 1s 0.5s linear infinite;
+        }
+        @keyframes line3 {
+            50%,100% {
+                left: -100%;
+            }
+        }
+        .btn>span:nth-child(4) {
+            width: 2px;
+            height: 100%;
+            background: -webkit-linear-gradient(top,#39f,transparent);
+            left: 0;
+            top: 100%;
+            animation: line4 1s 0.75s linear infinite;
+        }
+        @keyframes line4 {
+            50%,100% {
+                top: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loginbox">
+        <h2>Login</h2>
+        <form action="">
+            <div class="inp">
+                <input type="text" required>
+                <label for="">UserName</label>
+            </div>
+            <div class="inp">
+                <input type="password" required>
+                <label for="">PassWord</label>
+            </div>
+            <button class="btn">
+                submit
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </form>
+    </div>
+</body>
+</html>

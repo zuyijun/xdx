@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery轮播图</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="Styles/style.css" />
+    <script src="libs/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="bigimg" id="bigimg">
+            <img src="images/b1.jpg" alt="第1张图的描述信息" class="current" />
+            <img src="images/b2.jpg" alt="第2张图的描述信息" />
+            <img src="images/b3.jpg" alt="第3张图的描述信息" />
+            <img src="images/b4.jpg" alt="第4张图的描述信息" />
+            <img src="images/b5.jpg" alt="第5张图的描述信息" />
+            <img src="images/b6.jpg" alt="第6张图的描述信息" />
+            <img src="images/b7.jpg" alt="第7张图的描述信息" />
+            <img src="images/b8.jpg" alt="第8张图的描述信息" />
+            <img src="images/b9.jpg" alt="第9张图的描述信息" />
+            <img src="images/b10.jpg" alt="第10张图的描述信息" />
+            <div class="tip" id="tip">
+                <h3>第1张图的描述信息</h3>
+                <a class="l" href="javascript:;"></a>
+                <a class="r" href="javascript:;"></a>
+            </div>
+        </div>
+        <div class="smallimg" id="smallimg">
+            <ul>
+                <li>
+                    <img src="images/small01.jpg" />
+                    <span class="mask" style="display:none;"></span>
+                    <span class="border" style="display:block;"></span>
+                </li>
+                <li>
+                    <img src="images/small02.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small03.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small04.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small05.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small06.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small07.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small08.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small09.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+                <li>
+                    <img src="images/small10.jpg" />
+                    <span class="mask"></span>
+                    <span class="border"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    	$(function(){
+    		var bigimg = $(".bigimg img");
+			var smallimgmask = $(".smallimg .mask");
+			var smallimgborder = $(".smallimg .border");
+			var name = $(".bigimg img_alt");
+    		var index=0;
+    		var smallimg = $(".smallimg li");
+    		var timer = null;
+			console.log(bigimg);
+
+			var ChangeImgr = function(){
+				if (index==9) {
+					$(bigimg[index]).removeClass('current');
+					$(smallimgmask[index]).css('display','block');
+					$(smallimgborder[index]).css('display','none');
+					index=0;
+					$(bigimg[index]).addClass('current');
+					$(smallimgmask[index]).css('display','none');
+					$(smallimgborder[index]).css('display','block');
+				}
+				else if(index<9){
+					$(bigimg[index]).removeClass('current');
+					$(bigimg[index+1]).addClass('current');
+					$(smallimgmask[index+1]).css('display','none');
+					$(smallimgmask[index]).css('display','block');
+					$(smallimgborder[index]).css('display','none');
+					$(smallimgborder[index+1]).css('display','block');
+					index++;
+				}
+				$('.tip h3').text($('.bigimg img').eq(index).attr('alt'));
+			}
+
+			var ChangeImgl = function(){
+				if (index==0) {
+					$(bigimg[index]).removeClass('current');
+					$(smallimgmask[index]).css('display','block');
+					$(smallimgborder[index]).css('display','none');
+					index=9;
+					$(bigimg[index]).addClass('current');
+					$(smallimgmask[index]).css('display','none');
+					$(smallimgborder[index]).css('display','block');
+				}
+				else if(index>-1){
+					$(bigimg[index]).removeClass('current');
+					$(bigimg[index-1]).addClass('current');
+					$(smallimgmask[index-1]).css('display','none');
+					$(smallimgmask[index]).css('display','block');
+					$(smallimgborder[index]).css('display','none');
+					$(smallimgborder[index-1]).css('display','block');
+					index--;
+				}
+				$('.tip h3').text($('.bigimg img').eq(index).attr('alt'));
+			}
+			var autoChangeImg = function(){
+				timer = setInterval(ChangeImgr,1500);
+			};
+			
+			autoChangeImg();
+
+			$(".main").hover(function(){
+				clearInterval(timer);
+				console.log(timer);
+			},autoChangeImg);
+
+			$(".l").on('click',function() {
+				ChangeImgl();
+			})
+
+			$(".r").on('click',function() {
+				ChangeImgr();
+			})
+
+			$(smallimg).on('click',function() {
+				$(bigimg[index]).removeClass('current');
+				$(smallimgmask[index]).css('display','block');
+				$(smallimgborder[index]).css('display','none');
+				index = $(this).index();
+				$(bigimg[index]).addClass('current');
+				$(smallimgmask[index]).css('display','none');
+				$(smallimgborder[index]).css('display','block');
+				$('.tip h3').text($('.bigimg img').eq(index).attr('alt'));			
+			})
+
+		})
+
+    </script>
+   
+</body>
+</html
